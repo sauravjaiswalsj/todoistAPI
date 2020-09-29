@@ -1,5 +1,9 @@
 from todoist.api import TodoistAPI
-api = TodoistAPI('375bc8471f9fde0664b768eacda239d5542998e3');
+from dotenv import load_dotenv
+import os
+load_dotenv();
+API_KEY=os.getenv("API_KEY");
+api = TodoistAPI(API_KEY);
 api.sync();
 print(api.state['projects']);
 
